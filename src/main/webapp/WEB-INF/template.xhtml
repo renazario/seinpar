@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>SEINPAR</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style>
+            *{
+                font-size: 12px;
+            }
+        </style>    
+        <script>
+            history.forward(-1);
+        </script>
+    </h:head>
+    <h:body>
+        <p:layout  style="height: 644px">
+            <p:layoutUnit position="west" size="180">
+                <h:form>
+                    <!--<p:panel header="Sistema para Gestão de Loja de Varejo"/>-->
+                    <p:menu>
+                        <p:menuitem value="Inicio" action="/index.xhtml?faces-redirect=true" icon="ui-icon-home" ajax="false"/>
+                        <p:submenu label="Registro">
+                            <p:menuitem value="Academicos" action="/academico/form?faces-redirect=true" ajax="false" icon="ui-icon-person" actionListener="#{academicoControle.novo()}"/>
+                            <p:menuitem value="Ponto" action="/registro/form?faces-redirect=true" ajax="false" icon="ui-icon-person" actionListener="#{registroControle.novo()}"/>
+                        </p:submenu>
+                    </p:menu>
+                </h:form>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center" style="max-height: 658px">
+                <ui:insert name="conteudo"/>
+            </p:layoutUnit>
+        </p:layout>
+    </h:body>
+</html>
